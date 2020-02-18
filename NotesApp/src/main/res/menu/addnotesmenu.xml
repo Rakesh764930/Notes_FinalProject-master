@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/view_on_map"
+        android:icon="@drawable/ic_action_location"
+        android:title="@string/addnotes"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/addnotes"
+        android:icon="@drawable/ic_action_addnotes"
+        android:title="@string/addnotes"
+        app:showAsAction="collapseActionView"/>
+    <item
+        android:id="@+id/sortnotesbytitle"
+        android:icon="@drawable/ic_action_addnotes"
+        android:title="SortByTitle(Descending)"
+        app:showAsAction="collapseActionView"/>
+    <item
+        android:id="@+id/sortnotesbytitle1"
+        android:icon="@drawable/ic_action_addnotes"
+        android:title="SortByTitle(Ascending)"
+        app:showAsAction="collapseActionView"/>
+    <item
+        android:id="@+id/sortnotesbydate"
+        android:icon="@drawable/ic_action_addnotes"
+        android:title="SortByDate(Descending)"
+        app:showAsAction="collapseActionView"/>
+    <item
+        android:id="@+id/sortnotesbydate1"
+        android:icon="@drawable/ic_action_addnotes"
+        android:title="SortByDate(Ascending)"
+        app:showAsAction="collapseActionView"/>
+</menu>

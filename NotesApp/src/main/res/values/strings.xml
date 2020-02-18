@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">RecyclerDemo</string>
+    <string name="textview">TextView</string>
+    <string name="mynotes">MyNotes</string>
+    <string name="msg_no_notes">No notes found!</string>
+    <string name="lbl_new_note_title">New Note</string>
+    <string name="lbl_edit_note_title">Edit Note</string>
+    <string name="hint_enter_note">Enter your note!</string>
+    <string name="search">search</string>
+    <string name="addnotes">AddNotes</string>
+    <string name="delete">Delete</string>
+    <string name="SortByTitle" />
+    <string name="SortByDate" />
+    <string name="title_activity_maps">Map</string>
+
+</resources>
