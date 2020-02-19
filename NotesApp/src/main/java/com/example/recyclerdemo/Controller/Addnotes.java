@@ -70,7 +70,7 @@ private EditText title;
     private int GALLERY = 1, CAMERA = 2;
 private EditText ndetails;
     private DatabaseHelper db;
-    private Button btnaddimage;
+    private Button btnaddimage,addAudio;
     private ImageView addimageview;
     private int editnotes;
     private NoteDetails editnodtemodal;
@@ -99,6 +99,7 @@ private EditText ndetails;
         title= (EditText) findViewById(R.id.txttitle);
         ndetails= (EditText) findViewById(R.id.txtnodedetails);
         btnaddimage= (Button) findViewById(R.id.addimage);
+        addAudio=findViewById(R.id.add_audio);
         addimageview= (ImageView) findViewById(R.id.addimage_view);
         if(editnotes==0)
         {
@@ -126,6 +127,13 @@ private EditText ndetails;
                     showPictureDialog();
                 }
             });
+        addAudio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent intent=new Intent(Addnotes.this,AudioActivity.class);
+               startActivity(intent);
+            }
+        });
     }
     public Bitmap StringToBitMap(String encodedString){
         try{
