@@ -1,8 +1,7 @@
-package com.example.recyclerdemo.Controller;
+package com.example.recyclerdemo.Activities;
 
 import android.Manifest;
 import android.app.AlertDialog;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,8 +18,6 @@ import android.location.LocationManager;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Environment;
-import android.os.Handler;
-import android.os.Looper;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
@@ -34,16 +31,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.recyclerdemo.Database.DatabaseHelper;
-import com.example.recyclerdemo.Modal.Note;
 import com.example.recyclerdemo.Modal.NoteDetails;
 import com.example.recyclerdemo.R;
 import com.karumi.dexter.Dexter;
@@ -61,9 +54,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-import static android.media.MediaRecorder.VideoSource.CAMERA;
-
-public class Addnotes extends AppCompatActivity {
+public class AddnotesActivity extends AppCompatActivity {
 int cid=0;
 private EditText title;
     private static final String IMAGE_DIRECTORY = "/demonuts";
@@ -130,7 +121,7 @@ private EditText ndetails;
         addAudio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               Intent intent=new Intent(Addnotes.this,AudioActivity.class);
+               Intent intent=new Intent(AddnotesActivity.this,AudioActivity.class);
                startActivity(intent);
             }
         });
@@ -167,7 +158,7 @@ private EditText ndetails;
 
             case R.id.addnotes1:
                 if (TextUtils.isEmpty(title.getText().toString()) || TextUtils.isEmpty(ndetails.getText().toString()) ) {
-                    Toast.makeText(Addnotes.this, "Enter All Field First", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddnotesActivity.this, "Enter All Field First", Toast.LENGTH_LONG).show();
                 }else {
 
                     if (editnotes == 0) {
@@ -189,14 +180,14 @@ private EditText ndetails;
 
                         title.setText("");
                         ndetails.setText("");
-                        AlertDialog alertDialog = new AlertDialog.Builder(Addnotes.this).create();
+                        AlertDialog alertDialog = new AlertDialog.Builder(AddnotesActivity.this).create();
                         alertDialog.setTitle("SUCESS");
                         alertDialog.setMessage("Saved Sucessfully");
                         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         //dialog.dismiss();
-                                        Intent it = new Intent(Addnotes.this, NotesDetails.class);
+                                        Intent it = new Intent(AddnotesActivity.this, NotesDetailsActivity.class);
                                         Bundle bundle = new Bundle();
 
 //Add your data to bundle
@@ -243,14 +234,14 @@ private EditText ndetails;
                             enote.setLongitude(longi);
 
                        db.updateNotedetails(enote);
-                AlertDialog alertDialog = new AlertDialog.Builder(Addnotes.this).create();
+                AlertDialog alertDialog = new AlertDialog.Builder(AddnotesActivity.this).create();
                 alertDialog.setTitle("SUCESS");
                 alertDialog.setMessage("Saved Sucessfully");
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 //dialog.dismiss();
-                                Intent it = new Intent(Addnotes.this, NotesDetails.class);
+                                Intent it = new Intent(AddnotesActivity.this, NotesDetailsActivity.class);
                                 Bundle bundle = new Bundle();
 
 //Add your data to bundle
@@ -319,12 +310,12 @@ private EditText ndetails;
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI);
                     String path = saveImage(bitmap);
-                    Toast.makeText(Addnotes.this, "Image Saved!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddnotesActivity.this, "Image Saved!", Toast.LENGTH_SHORT).show();
                     addimageview.setImageBitmap(bitmap);
 
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Toast.makeText(Addnotes.this, "Failed!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddnotesActivity.this, "Failed!", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -332,7 +323,7 @@ private EditText ndetails;
             Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
             addimageview.setImageBitmap(thumbnail);
             saveImage(thumbnail);
-            Toast.makeText(Addnotes.this, "Image Saved!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(AddnotesActivity.this, "Image Saved!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -409,11 +400,11 @@ private EditText ndetails;
 
     private void getLocation() {
         DecimalFormat df = new DecimalFormat("#.######");
-        if (ActivityCompat.checkSelfPermission(Addnotes.this, Manifest.permission.ACCESS_FINE_LOCATION)
+        if (ActivityCompat.checkSelfPermission(AddnotesActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
-                (Addnotes.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                (AddnotesActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
-            ActivityCompat.requestPermissions(Addnotes.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+            ActivityCompat.requestPermissions(AddnotesActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
 
         } else {
             Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);

@@ -1,4 +1,4 @@
-package com.example.recyclerdemo.Controller;
+package com.example.recyclerdemo.Activities;
 
 
 import android.Manifest;
@@ -7,10 +7,7 @@ import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
-import android.media.VolumeShaper;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -22,9 +19,7 @@ import android.widget.Toast;
 
 import com.example.recyclerdemo.R;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.UUID;
 
 public class AudioActivity extends AppCompatActivity {
 
@@ -44,7 +39,6 @@ public class AudioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_audio);
 
         audioManager = (AudioManager) this.getSystemService(Context.AUDIO_SERVICE);
-        // set the volume of played media to maximum.
         audioManager.setStreamVolume (AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC),0);
 
         btnPlay = findViewById(R.id.btn_play);
@@ -52,7 +46,6 @@ public class AudioActivity extends AppCompatActivity {
         btnStop = findViewById(R.id.btn_stop);
         btnStopRecord = findViewById(R.id.btn_stop_record);
 
-        // check the permission
         if (!checkPermissionDevice())
             requestPermission();
 
@@ -62,10 +55,6 @@ public class AudioActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (checkPermissionDevice()) {
-//                    pathSave = Environment.getExternalStorageDirectory().getAbsolutePath()
-//                            + "/recording.3gp";
-//                    pathSave = getExternalFilesDir(null).getAbsolutePath()
-//                            + RECORDED_FILE;
                     pathSave = getExternalCacheDir().getAbsolutePath()
                             + RECORDED_FILE;
 
@@ -77,7 +66,6 @@ public class AudioActivity extends AppCompatActivity {
                         mediaRecorder.prepare();
                         mediaRecorder.start();
                     } catch (IllegalStateException ise) {
-                        // make something ...
                         ise.printStackTrace();
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -88,7 +76,7 @@ public class AudioActivity extends AppCompatActivity {
                     btnStopRecord.setEnabled(true);
                     btnRecord.setVisibility(View.GONE);
 
-                    Toast.makeText(AudioActivity.this, "Recording...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AudioActivity.this, "Recording Started", Toast.LENGTH_SHORT).show();
                 } else
                     requestPermission();
             }
@@ -163,10 +151,6 @@ public class AudioActivity extends AppCompatActivity {
         mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
         mediaRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
         mediaRecorder.setOutputFile(pathSave);
-//        mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-//        mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
-//        mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT);
-
     }
 
     private void requestPermission() {

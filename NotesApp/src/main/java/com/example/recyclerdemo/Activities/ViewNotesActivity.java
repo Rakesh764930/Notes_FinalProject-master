@@ -1,4 +1,4 @@
-package com.example.recyclerdemo.Controller;
+package com.example.recyclerdemo.Activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -10,27 +10,19 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Base64;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.recyclerdemo.Database.DatabaseHelper;
-import com.example.recyclerdemo.Maps.MapsActivity;
-import com.example.recyclerdemo.Modal.Note;
 import com.example.recyclerdemo.Modal.NoteDetails;
 import com.example.recyclerdemo.R;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class ViewNotes extends AppCompatActivity {
+public class ViewNotesActivity extends AppCompatActivity {
 private int colid=0;
 private TextView pcolid;
 private EditText txtviewtitle;
@@ -99,7 +91,7 @@ public ImageView imagefornotes;
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case R.id.viewnotes_maps:
-                Intent i10 = new Intent(ViewNotes.this, MapsActivity.class);
+                Intent i10 = new Intent(ViewNotesActivity.this, MapsActivity.class);
 
 
 //Create the bundle
@@ -121,7 +113,7 @@ public ImageView imagefornotes;
                 NavUtils.navigateUpTo(this, intent);
                 return true;
             case R.id.viewnotes_edit:
-                Intent i = new Intent(ViewNotes.this, Addnotes.class);
+                Intent i = new Intent(ViewNotesActivity.this, AddnotesActivity.class);
 
 
 //Create the bundle
@@ -148,7 +140,7 @@ public ImageView imagefornotes;
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 deleteNote();
-                                Intent it = new Intent(ViewNotes.this, NotesDetails.class);
+                                Intent it = new Intent(ViewNotesActivity.this, NotesDetailsActivity.class);
                                 Bundle bundle = new Bundle();
 
 //Add your data to bundle

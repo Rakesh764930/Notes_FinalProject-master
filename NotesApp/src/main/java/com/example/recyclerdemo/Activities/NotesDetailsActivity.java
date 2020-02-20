@@ -1,43 +1,33 @@
-package com.example.recyclerdemo.Controller;
+package com.example.recyclerdemo.Activities;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Parcelable;
 import android.support.v4.app.NavUtils;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.SearchView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.recyclerdemo.Adapter.RcNotes_Adpater;
-import com.example.recyclerdemo.Adapter.Rc_Adapter;
+import com.example.recyclerdemo.Adapters.RcNotes_Adpater;
 import com.example.recyclerdemo.Database.DatabaseHelper;
-import com.example.recyclerdemo.Maps.MapsActivity;
 import com.example.recyclerdemo.Modal.Note;
 import com.example.recyclerdemo.Modal.NoteDetails;
-import com.example.recyclerdemo.Modal.RcModal;
 import com.example.recyclerdemo.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NotesDetails extends AppCompatActivity {
+public class NotesDetailsActivity extends AppCompatActivity {
     private List<NoteDetails> notesdetailsList = new ArrayList<>();
     private List<NoteDetails> cname = new ArrayList<>();
     private List<NoteDetails> contacts = new ArrayList<>();
@@ -92,7 +82,7 @@ private int stuff=0;
                 lstallnoteData, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-                Intent i = new Intent(NotesDetails.this, ViewNotes.class);
+                Intent i = new Intent(NotesDetailsActivity.this, ViewNotesActivity.class);
                 NoteDetails n1;
                 if(contacts.isEmpty())
                 {
@@ -181,7 +171,7 @@ intent11.putExtras(bundle11);
                 return true;
             case R.id.addnotes:
                 //Write your code
-                Intent i=new Intent(this, Addnotes.class);
+                Intent i=new Intent(this, AddnotesActivity.class);
 
                 Bundle bundle = new Bundle();
 

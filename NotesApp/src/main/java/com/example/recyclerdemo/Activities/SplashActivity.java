@@ -1,4 +1,4 @@
-package com.example.recyclerdemo.Controller;
+package com.example.recyclerdemo.Activities;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -10,7 +10,7 @@ import android.widget.ProgressBar;
 
 import com.example.recyclerdemo.R;
 
-public class Splash_screen extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
     private ProgressBar pgsBar;
     private static int SPLASH_TIME_OUT = 2000;
     @Override
@@ -28,7 +28,7 @@ public class Splash_screen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent LoginIntent = new Intent(Splash_screen.this, MainActivity.class);
+                Intent LoginIntent = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(LoginIntent);
                 finish();
 

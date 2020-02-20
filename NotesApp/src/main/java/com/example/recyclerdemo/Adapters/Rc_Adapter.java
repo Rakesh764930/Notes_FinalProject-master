@@ -1,4 +1,4 @@
-package com.example.recyclerdemo.Adapter;
+package com.example.recyclerdemo.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -6,15 +6,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.recyclerdemo.Modal.Note;
 import com.example.recyclerdemo.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public  class Rc_Adapter  extends RecyclerView.Adapter<Rc_Adapter.Myviewholder>   {
@@ -45,15 +42,10 @@ public  class Rc_Adapter  extends RecyclerView.Adapter<Rc_Adapter.Myviewholder> 
         myviewholder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              /*  Intent i=new Intent(mcontext, ProductDetails.class);
-                i.putExtra("pdetails",pro);
-                mcontext.startActivity(i); */
 
                 CharSequence text = cat.getCategory();
                 int duration = Toast.LENGTH_LONG;
 
-              //  Toast toast = Toast.makeText(mcontext, text, duration);
-                //toast.show();
             }
         });
 

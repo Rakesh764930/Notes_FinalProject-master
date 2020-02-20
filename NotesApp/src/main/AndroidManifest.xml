@@ -28,7 +28,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Controller.AudioActivity"></activity>
+        <activity android:name=".Activities.AudioActivity"></activity>
 
         <uses-library
             android:name="org.apache.http.legacy"
@@ -46,26 +46,26 @@
             android:value="AIzaSyDg3fQSGjwenI7V7inrngqDxMDOLeON3Pc" />
 
         <activity
-            android:name=".Maps.MapsActivity"
+            android:name=".Activities.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".Controller.ViewNotes"
-            android:parentActivityName=".Controller.NotesDetails" />
-        <activity android:name=".Controller.Splash_screen">
+            android:name=".Activities.ViewNotesActivity"
+            android:parentActivityName=".Activities.NotesDetailsActivity" />
+        <activity android:name=".Activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Controller.MainActivity" />
+        <activity android:name=".Activities.MainActivity" />
         <activity
-            android:name=".Controller.Addnotes"
+            android:name=".Activities.AddnotesActivity"
             android:exported="true"
-            android:parentActivityName=".Controller.NotesDetails" />
+            android:parentActivityName=".Activities.NotesDetailsActivity" />
         <activity
-            android:name=".Controller.NotesDetails"
-            android:parentActivityName=".Controller.MainActivity" />
+            android:name=".Activities.NotesDetailsActivity"
+            android:parentActivityName=".Activities.MainActivity" />
     </application>
 
 </manifest>

@@ -1,8 +1,6 @@
-package com.example.recyclerdemo.Controller;
+package com.example.recyclerdemo.Activities;
 
 import android.app.Dialog;
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,28 +13,20 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import android.app.SearchManager;
 import android.widget.SearchView;
-import android.widget.SearchView.OnQueryTextListener;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.recyclerdemo.Adapter.RcNotes_Adpater;
-import com.example.recyclerdemo.Adapter.Rc_Adapter;
+import com.example.recyclerdemo.Adapters.Rc_Adapter;
 import com.example.recyclerdemo.Modal.Note;
-import com.example.recyclerdemo.Modal.NoteDetails;
 import com.example.recyclerdemo.Modal.RcModal;
 import com.example.recyclerdemo.R;
 import com.example.recyclerdemo.Database.DatabaseHelper;
@@ -102,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 lstcategoryData, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, final int position) {
-                Intent i = new Intent(MainActivity.this, NotesDetails.class);
+                Intent i = new Intent(MainActivity.this, NotesDetailsActivity.class);
                 Note n1;
                 if(cat.isEmpty())
                 {
