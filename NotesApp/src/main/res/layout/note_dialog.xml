@@ -10,7 +10,6 @@
         android:id="@+id/dialog_title"
         android:layout_width="263dp"
         android:layout_height="45dp"
-        android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif-medium"
@@ -18,33 +17,36 @@
         android:text="New Category"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
-        android:textSize="24sp"
+        android:textSize="30sp"
         android:textStyle="normal|bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.232"
-        app:layout_constraintStart_toStartOf="@+id/category"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/category"
-        android:layout_width="311dp"
-        android:layout_height="87dp"
+        android:layout_width="263dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="10sp"
         android:background="@android:color/transparent"
         android:gravity="top"
         android:hint="Enter New Category"
         android:inputType="textCapSentences|textMultiLine"
         android:lines="4"
-        android:textSize="18sp"
+        android:textAlignment="center"
+        android:textSize="21sp"
         app:layout_constraintBottom_toTopOf="@+id/btnadd"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dialog_title" />
 
     <Button
         android:id="@+id/btnadd"
-        android:layout_width="218dp"
-        android:layout_height="58dp"
+        android:layout_width="219dp"
+        android:layout_height="52dp"
         android:layout_marginTop="32dp"
+        android:background="#FFC107"
         android:text="SAVE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,8 +54,8 @@
 
     <Button
         android:id="@+id/btncancel"
-        android:layout_width="223dp"
-        android:layout_height="57dp"
+        android:layout_width="225dp"
+        android:layout_height="56dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -61,9 +63,8 @@
         android:text="CANCEL"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnadd"
-        app:layout_constraintVertical_bias="0.051" />
+        app:layout_constraintVertical_bias="0.05" />
 
 </android.support.constraint.ConstraintLayout>
