@@ -1,4 +1,4 @@
-package com.example.recyclerdemo.Activities;
+package com.example.NotesApp.Activities;
 
 
 import android.Manifest;
@@ -17,7 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.recyclerdemo.R;
+import com.example.NotesApp.R;
 
 import java.io.IOException;
 

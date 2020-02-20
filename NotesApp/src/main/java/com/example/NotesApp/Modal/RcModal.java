@@ -1,4 +1,4 @@
-package com.example.recyclerdemo.Modal;
+package com.example.NotesApp.Modal;
 
 public class RcModal {
 

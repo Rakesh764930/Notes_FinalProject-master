@@ -1,4 +1,4 @@
-package com.example.recyclerdemo.Activities;
+package com.example.NotesApp.Activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -18,9 +18,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.recyclerdemo.Database.DatabaseHelper;
-import com.example.recyclerdemo.Modal.NoteDetails;
-import com.example.recyclerdemo.R;
+import com.example.NotesApp.Database.DatabaseHelper;
+import com.example.NotesApp.Modal.NoteDetails;
+import com.example.NotesApp.R;
 
 public class ViewNotesActivity extends AppCompatActivity {
 private int colid=0;

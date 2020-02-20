@@ -1,4 +1,4 @@
-package com.example.recyclerdemo.Adapters;
+package com.example.NotesApp.Adapters;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -12,8 +12,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.recyclerdemo.Modal.NoteDetails;
-import com.example.recyclerdemo.R;
+import com.example.NotesApp.Modal.NoteDetails;
+import com.example.NotesApp.R;
 
 import java.util.List;
 

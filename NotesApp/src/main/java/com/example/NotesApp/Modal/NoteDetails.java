@@ -1,4 +1,4 @@
-package com.example.recyclerdemo.Modal;
+package com.example.NotesApp.Modal;
 
 import android.os.Parcel;
 import android.os.Parcelable;

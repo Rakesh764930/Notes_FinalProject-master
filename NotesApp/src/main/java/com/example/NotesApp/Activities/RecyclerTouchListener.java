@@ -1,4 +1,4 @@
-package com.example.recyclerdemo.Activities;
+package com.example.NotesApp.Activities;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

@@ -1,4 +1,4 @@
-package com.example.recyclerdemo.Adapters;
+package com.example.NotesApp.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.recyclerdemo.Modal.Note;
-import com.example.recyclerdemo.R;
+import com.example.NotesApp.Modal.Note;
+import com.example.NotesApp.R;
 
 import java.util.List;
 

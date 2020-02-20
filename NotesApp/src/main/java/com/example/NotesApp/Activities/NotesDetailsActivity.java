@@ -1,4 +1,4 @@
-package com.example.recyclerdemo.Activities;
+package com.example.NotesApp.Activities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -18,11 +18,11 @@ import android.view.View;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.example.recyclerdemo.Adapters.RcNotes_Adpater;
-import com.example.recyclerdemo.Database.DatabaseHelper;
-import com.example.recyclerdemo.Modal.Note;
-import com.example.recyclerdemo.Modal.NoteDetails;
-import com.example.recyclerdemo.R;
+import com.example.NotesApp.Adapters.RcNotes_Adpater;
+import com.example.NotesApp.Database.DatabaseHelper;
+import com.example.NotesApp.Modal.Note;
+import com.example.NotesApp.Modal.NoteDetails;
+import com.example.NotesApp.R;
 
 import java.util.ArrayList;
 import java.util.List;

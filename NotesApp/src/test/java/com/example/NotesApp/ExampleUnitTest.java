@@ -1,4 +1,4 @@
-package com.example.recyclerdemo;
+package com.example.NotesApp;
 
 import org.junit.Test;
 

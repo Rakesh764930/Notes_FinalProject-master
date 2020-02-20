@@ -1,4 +1,4 @@
-package com.example.recyclerdemo.Activities;
+package com.example.NotesApp.Activities;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -25,11 +25,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.recyclerdemo.Adapters.Rc_Adapter;
-import com.example.recyclerdemo.Modal.Note;
-import com.example.recyclerdemo.Modal.RcModal;
-import com.example.recyclerdemo.R;
-import com.example.recyclerdemo.Database.DatabaseHelper;
+import com.example.NotesApp.Adapters.Rc_Adapter;
+import com.example.NotesApp.Database.DatabaseHelper;
+import com.example.NotesApp.Modal.Note;
+import com.example.NotesApp.Modal.RcModal;
+import com.example.NotesApp.R;
 
 import java.util.ArrayList;
 import java.util.List;

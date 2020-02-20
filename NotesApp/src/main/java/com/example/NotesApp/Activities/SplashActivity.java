@@ -1,4 +1,4 @@
-package com.example.recyclerdemo.Activities;
+package com.example.NotesApp.Activities;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -8,7 +8,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
-import com.example.recyclerdemo.R;
+import com.example.NotesApp.R;
 
 public class SplashActivity extends AppCompatActivity {
     private ProgressBar pgsBar;

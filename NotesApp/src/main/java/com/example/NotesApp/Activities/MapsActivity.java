@@ -1,11 +1,11 @@
-package com.example.recyclerdemo.Activities;
+package com.example.NotesApp.Activities;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
-import com.example.recyclerdemo.Database.DatabaseHelper;
-import com.example.recyclerdemo.Modal.NoteDetails;
-import com.example.recyclerdemo.R;
+import com.example.NotesApp.Database.DatabaseHelper;
+import com.example.NotesApp.Modal.NoteDetails;
+import com.example.NotesApp.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

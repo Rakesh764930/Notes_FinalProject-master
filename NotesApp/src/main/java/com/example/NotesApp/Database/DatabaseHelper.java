@@ -1,4 +1,4 @@
-package com.example.recyclerdemo.Database;
+package com.example.NotesApp.Database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -12,8 +12,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.recyclerdemo.Modal.Note;
-import com.example.recyclerdemo.Modal.NoteDetails;
+import com.example.NotesApp.Modal.Note;
+import com.example.NotesApp.Modal.NoteDetails;
 
 
 public class DatabaseHelper extends SQLiteOpenHelper {
