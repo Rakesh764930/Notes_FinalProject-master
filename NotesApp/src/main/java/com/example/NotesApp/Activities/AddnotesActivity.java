@@ -62,7 +62,7 @@ private EditText title;
 private EditText ndetails;
     private DatabaseHelper db;
     private Button btnaddimage,addAudio;
-    private ImageView addimageview;
+    private ImageView  addimageview;
     private int editnotes;
     private NoteDetails editnodtemodal;
     private double lati;
