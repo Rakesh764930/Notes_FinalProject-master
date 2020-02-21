@@ -160,15 +160,7 @@ private int stuff=0;
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.view_on_map:
-                Intent intent11 = new Intent(this, MapsActivity.class);
-                Bundle bundle11 = new Bundle();
-                //bundle11.putParcelableArrayList("mylist", (ArrayList<? extends Parcelable>) notesdetailsList);
-
-                bundle11.putInt("cat",stuff);
-intent11.putExtras(bundle11);
-                this.startActivity(intent11);
-                return true;
+         
             case R.id.addnotes:
                 //Write your code
                 Intent i=new Intent(this, AddnotesActivity.class);

@@ -39,11 +39,11 @@ public  class Rc_Adapter  extends RecyclerView.Adapter<Rc_Adapter.Myviewholder> 
         final Note cat = categoryList.get(i);
         myviewholder.cname.setText(cat.getCategory());
 
-        myviewholder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
                 CharSequence text = cat.getCategory();
+                myviewholder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
                 int duration = Toast.LENGTH_LONG;
 
             }
