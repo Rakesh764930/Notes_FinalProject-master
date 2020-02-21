@@ -210,7 +210,7 @@ public class NotesDetailsActivity extends AppCompatActivity {
                 return true;
 
             case R.id.sortnotesbydate:
-                notesdetailsList=db.getsortbytitle(stuff,"DESC");
+                notesdetailsList=db.getsortbydate(stuff,"DESC");
                 mAdapter = new RcNotes_Adpater(notesdetailsList,this);
                 RecyclerView.LayoutManager mLayoutManager2 = new GridLayoutManager(this, 1);
                 //  lstallnoteData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
@@ -224,7 +224,7 @@ public class NotesDetailsActivity extends AppCompatActivity {
                 return true;
 
             case R.id.sortnotesbydate1:
-                notesdetailsList=db.getsortbytitle(stuff,"ASC");
+                notesdetailsList=db.getsortbydate(stuff,"ASC");
                 mAdapter = new RcNotes_Adpater(notesdetailsList,this);
                 RecyclerView.LayoutManager mLayoutManager3 = new GridLayoutManager(this, 1);
                 //  lstallnoteData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
