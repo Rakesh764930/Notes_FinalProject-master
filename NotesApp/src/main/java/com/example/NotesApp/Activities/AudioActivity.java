@@ -24,14 +24,14 @@ import java.io.IOException;
 public class AudioActivity extends AppCompatActivity {
 
     Button btnPlay, btnStop, btnRecord, btnStopRecord;
-    String pathSave = "";
+    static  String pathSave = "";
     MediaRecorder mediaRecorder;
     MediaPlayer mediaPlayer;
     AudioManager audioManager;
 
     final int REQUEST_PERMISSION_CODE = 1000;
 
-    final private static String RECORDED_FILE = "/audio.3gp";
+    final private static String RECORDED_FILE = "/audio.mp3";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +59,7 @@ public class AudioActivity extends AppCompatActivity {
                             + RECORDED_FILE;
 
                     Log.d("path", "onClick: " + pathSave);
+
 
                     setUpMediaRecorder();
 

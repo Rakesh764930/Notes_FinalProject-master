@@ -53,7 +53,7 @@ public ImageView imagefornotes;
       imagefornotes= (ImageView) findViewById(R.id.imageView31);
         imagefornotes.setImageBitmap(StringToBitMap(ndd.getNoteimage()));
         TextView txtdate= (TextView) findViewById(R.id.lbldate);
-        txtdate.setText("Last Modified on"+" "+ndd.getNotedate()+"\n"+ndd.getFulldaaress());
+        txtdate.setText("Last Modified on:"+" "+ndd.getNotedate()+"\n"+ndd.getFulldaaress());
         entext(false);
 
 
@@ -132,7 +132,7 @@ public ImageView imagefornotes;
                 return true;
             case R.id.viewnotes_delete:
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-                builder1.setMessage("Do you want to delete the note ?");
+                builder1.setMessage("Are you sure to delete the note ?");
                 builder1.setCancelable(true);
 
                 builder1.setPositiveButton(

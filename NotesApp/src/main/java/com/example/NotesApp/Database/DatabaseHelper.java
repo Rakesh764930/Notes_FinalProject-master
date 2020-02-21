@@ -185,7 +185,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         LocalDateTime myDateObj = LocalDateTime.now();
         // System.out.println("Before formatting: " + myDateObj);
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd MMM,yyyy HH:mm:ss");
         String formattedDate = myDateObj.format(myFormatObj);
         ContentValues values = new ContentValues();
         // `id` and `timestamp` will be inserted automatically.

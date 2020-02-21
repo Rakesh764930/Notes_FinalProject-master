@@ -229,6 +229,7 @@ private EditText ndetails;
                             enote.setNotedetails(ndetails.getText().toString());
                             enote.setNotetitle(title.getText().toString());
                             enote.setNoteimage(img_str);
+                            enote.setNoteaudio(AudioActivity.pathSave);
                             enote.setFulldaaress(fulladd);
                             enote.setLatitude(lati);
                             enote.setLongitude(longi);
@@ -412,12 +413,7 @@ private EditText ndetails;
             Location location1 = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
           //  Location location2 = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
-
-        /*   if (location2 != null) {
-                double latti = Double.parseDouble(df.format(location2.getLatitude()));
-                double longi = Double.parseDouble(df.format(location2.getLongitude()));
-                setAddress(latti, longi);
-            } else */ if (location1 != null) {
+ if (location1 != null) {
                 double latti = Double.parseDouble(df.format(location1.getLatitude()));
                 double longi = Double.parseDouble(df.format(location1.getLongitude()));
                 setAddress(latti, longi);
@@ -464,12 +460,14 @@ private EditText ndetails;
 
         if (addresses.size() > 0) {
             Log.d("max", " " + addresses.get(0).getMaxAddressLineIndex());
-
+            String add1=addresses.get(0).getSubThoroughfare();
+            String add2=addresses.get(0).getThoroughfare();
+            String add=addresses.get(0).getSubLocality();
             String city = addresses.get(0).getLocality();
             String state = addresses.get(0).getAdminArea();
             String country = addresses.get(0).getCountryName();
              String postalcode=addresses.get(0).getPostalCode();
-            fulladd = city+", "+state+", "+country+","+postalcode;
+            fulladd = add1+","+add2+","+add+","+city+","+postalcode;
             lati=latitude;
             longi=longitude;
             Log.d("fulladd",fulladd);
