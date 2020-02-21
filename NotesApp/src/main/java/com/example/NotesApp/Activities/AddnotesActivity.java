@@ -229,7 +229,7 @@ private EditText ndetails;
                             enote.setNotedetails(ndetails.getText().toString());
                             enote.setNotetitle(title.getText().toString());
                             enote.setNoteimage(img_str);
-                            enote.setNoteaudio(AudioActivity.pathSave);
+
                             enote.setFulldaaress(fulladd);
                             enote.setLatitude(lati);
                             enote.setLongitude(longi);

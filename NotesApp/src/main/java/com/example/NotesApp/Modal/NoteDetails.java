@@ -5,7 +5,6 @@ import android.os.Parcelable;
 
 import java.io.Serializable;
 import java.util.Arrays;
-
 public class NoteDetails implements Serializable {
     public static final String TABLE_NAME = "notesdetails";
 
@@ -15,8 +14,6 @@ public class NoteDetails implements Serializable {
     public static final String COLUMN_NOTEDATE = "notedate";
     public static final String COLUMN_NOTEDETAILS = "notedetails";
     public static final String COLUMN_NOTEIMAGE = "noteimage";
-    public static final String COLUMN_AUDIO = "noteimage";
-
     public static final String COLUMN_LATITUDE = "latitude";
     public static final String COLUMN_LONGITUDE = "longitude";
     public static final String COLUMN_FULLADDRESS = "fulladdress";
@@ -27,31 +24,26 @@ public class NoteDetails implements Serializable {
     private String notedetails;
     private String notedate;
     private String noteimage;
-    private String noteaudio;
     private double latitude;
     private double longitude;
     private String fulldaaress;
 
-    public NoteDetails(int id, String category, String notetitle, String notedetails, String notedate, String noteimage ,String noteaudio) {
+    public NoteDetails(int id, String category, String notetitle, String notedetails, String notedate, String noteimage) {
         this.id = id;
         this.category = category;
         this.notetitle = notetitle;
         this.notedetails = notedetails;
         this.notedate = notedate;
         this.noteimage = noteimage;
-        this.noteaudio=noteaudio;
     }
 
-
-
-    public NoteDetails(int id, String category, String notetitle, String notedetails, String notedate, String noteimage, double latitude, double longitude, String fulldaaress, String noteaudio) {
+    public NoteDetails(int id, String category, String notetitle, String notedetails, String notedate, String noteimage, double latitude, double longitude, String fulldaaress) {
         this.id = id;
         this.category = category;
         this.notetitle = notetitle;
         this.notedetails = notedetails;
         this.notedate = notedate;
         this.noteimage = noteimage;
-        this.noteaudio=noteaudio;
         this.latitude = latitude;
         this.longitude = longitude;
         this.fulldaaress = fulldaaress;
@@ -130,13 +122,6 @@ public class NoteDetails implements Serializable {
     public void setNoteimage(String noteimage) {
         this.noteimage = noteimage;
     }
-    public String getNoteaudio() {
-        return noteaudio;
-    }
-
-    public void setNoteaudio(String noteaudio) {
-        this.noteaudio = noteaudio;
-    }
 
     public static String getCreateTable() {
         return CREATE_TABLE;
@@ -151,7 +136,6 @@ public class NoteDetails implements Serializable {
                 ", notedetails='" + notedetails + '\'' +
                 ", notedate='" + notedate + '\'' +
                 ", noteimage='" + noteimage + '\'' +
-                ", noteaudio='" + noteaudio + '\'' +
                 ", latitude='" + latitude + '\'' +
                 ", longitude='" + longitude + '\'' +
                 ", fulldaaress='" + fulldaaress + '\'' +
@@ -168,7 +152,6 @@ public class NoteDetails implements Serializable {
                     + COLUMN_NOTEDETAILS + " TEXT,"
                     + COLUMN_NOTEIMAGE + " BLOB NULL,"
                     + COLUMN_LATITUDE + " TEXT NULL,"
-                    + COLUMN_AUDIO + " TEXT NULL,"
                     + COLUMN_LONGITUDE + " TEXT NULL,"
                     + COLUMN_FULLADDRESS + " TEXT NULL"
                     + ")";

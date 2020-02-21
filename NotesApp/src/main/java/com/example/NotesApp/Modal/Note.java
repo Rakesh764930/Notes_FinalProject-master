@@ -2,6 +2,7 @@ package com.example.NotesApp.Modal;
 
 
 
+
 public class Note {
     public static final String TABLE_NAME = "category";
 
@@ -26,7 +27,7 @@ public class Note {
 
     public Note(int id, String category ) {
         this.id = id;
-       this.category=category;
+        this.category=category;
 
     }
 

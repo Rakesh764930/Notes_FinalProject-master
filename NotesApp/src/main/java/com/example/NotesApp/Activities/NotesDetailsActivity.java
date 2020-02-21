@@ -33,7 +33,7 @@ public class NotesDetailsActivity extends AppCompatActivity {
     private List<NoteDetails> contacts = new ArrayList<>();
     private RecyclerView lstallnoteData;
     private RcNotes_Adpater mAdapter;
-private int stuff=0;
+    private int stuff=0;
     private DatabaseHelper db;
     private SearchView sc;
 
@@ -49,13 +49,13 @@ private int stuff=0;
         //  TextView cid= (TextView) findViewById(R.id.cid);
         //Get the bundle
         Bundle bundle = getIntent().getExtras();
-          sc = (SearchView) findViewById(R.id.notes_search);
+        sc = (SearchView) findViewById(R.id.notes_search);
         sc.setFocusable(true);
         sc.requestFocus();
         sc.requestFocusFromTouch();
 //Extract the data…
 
-            stuff = bundle.getInt("categoryid");
+        stuff = bundle.getInt("categoryid");
 
         db = new DatabaseHelper(this);
         Note n=db.getNote(stuff);
@@ -63,10 +63,13 @@ private int stuff=0;
         notesdetailsList.addAll(db.getNoteDetails(stuff));
         sc.setQueryHint("Enter Title");
         //  cid.setText(Integer.toString(stuff));
-       // System.out.println(notesdetailsList.get(2));
+        // System.out.println(notesdetailsList.get(2));
 //data();
         mAdapter = new RcNotes_Adpater(notesdetailsList,this);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
+        //     lstallnoteData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        // lstcategoryData.setLayoutManager(new GridLayoutManager(this, 2));
+        //  lstcategoryData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL));
         lstallnoteData.setHasFixedSize(true);
         lstallnoteData.setLayoutManager(mLayoutManager);
         lstallnoteData.setItemAnimator(new DefaultItemAnimator());
@@ -93,12 +96,16 @@ private int stuff=0;
                 }
                 int getrec= n1.getId();
                 Log.d("colid",Integer.toString(getrec));
+//Create the bundle
                 Bundle bundle = new Bundle();
 
+//Add your data to bundle
                 bundle.putInt("colid", getrec);
 
+//Add the bundle to the intent
                 i.putExtras(bundle);
 
+//Fire that second activity
                 startActivity(i);
             }
 
@@ -114,7 +121,7 @@ private int stuff=0;
             public boolean onQueryTextSubmit(String query) {
 
 
-                    searchContact(query);
+                searchContact(query);
 
                 return false;
             }
@@ -125,6 +132,7 @@ private int stuff=0;
                 {
                     contacts.clear();
                     getdata();
+                    // Toast.makeText(getApplicationContext(),"Hello Javatpoint",Toast.LENGTH_SHORT).show();
                 }
                 else {
                     searchContact(newText);
@@ -134,10 +142,10 @@ private int stuff=0;
         });
     }
 
-     public void data() {
+    public void data() {
         cname = new ArrayList<>();
-        cname.add(new NoteDetails(1,"1","1","1","1","1","1"));
-         cname.add(new NoteDetails(1,"1","1","1","1","1","1"));
+        cname.add(new NoteDetails(1,"1","1","1","1","1"));
+        cname.add(new NoteDetails(1,"1","1","1","1","1"));
 
     }
 
@@ -159,7 +167,10 @@ private int stuff=0;
 
                 Bundle bundle = new Bundle();
 
+//Add your data to bundle
                 bundle.putInt("cid", stuff);
+
+//Add the bundle to the intent
                 i.putExtras(bundle);
                 startActivity(i);
                 return true;
@@ -174,6 +185,9 @@ private int stuff=0;
                 notesdetailsList=db.getsortbytitle(stuff,"DESC");
                 mAdapter = new RcNotes_Adpater(notesdetailsList,this);
                 RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
+                //  lstallnoteData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+                // lstcategoryData.setLayoutManager(new GridLayoutManager(this, 2));
+                //  lstcategoryData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL));
                 lstallnoteData.setHasFixedSize(true);
                 lstallnoteData.setLayoutManager(mLayoutManager);
                 lstallnoteData.setItemAnimator(new DefaultItemAnimator());
@@ -185,6 +199,9 @@ private int stuff=0;
                 notesdetailsList=db.getsortbytitle(stuff,"ASC");
                 mAdapter = new RcNotes_Adpater(notesdetailsList,this);
                 RecyclerView.LayoutManager mLayoutManager1 = new GridLayoutManager(this, 1);
+                //  lstallnoteData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+                // lstcategoryData.setLayoutManager(new GridLayoutManager(this, 2));
+                //  lstcategoryData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL));
                 lstallnoteData.setHasFixedSize(true);
                 lstallnoteData.setLayoutManager(mLayoutManager1);
                 lstallnoteData.setItemAnimator(new DefaultItemAnimator());
@@ -196,6 +213,9 @@ private int stuff=0;
                 notesdetailsList=db.getsortbytitle(stuff,"DESC");
                 mAdapter = new RcNotes_Adpater(notesdetailsList,this);
                 RecyclerView.LayoutManager mLayoutManager2 = new GridLayoutManager(this, 1);
+                //  lstallnoteData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+                // lstcategoryData.setLayoutManager(new GridLayoutManager(this, 2));
+                //  lstcategoryData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL));
                 lstallnoteData.setHasFixedSize(true);
                 lstallnoteData.setLayoutManager(mLayoutManager2);
                 lstallnoteData.setItemAnimator(new DefaultItemAnimator());
@@ -207,6 +227,9 @@ private int stuff=0;
                 notesdetailsList=db.getsortbytitle(stuff,"ASC");
                 mAdapter = new RcNotes_Adpater(notesdetailsList,this);
                 RecyclerView.LayoutManager mLayoutManager3 = new GridLayoutManager(this, 1);
+                //  lstallnoteData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+                // lstcategoryData.setLayoutManager(new GridLayoutManager(this, 2));
+                //  lstcategoryData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL));
                 lstallnoteData.setHasFixedSize(true);
                 lstallnoteData.setLayoutManager(mLayoutManager3);
                 lstallnoteData.setItemAnimator(new DefaultItemAnimator());
@@ -220,13 +243,16 @@ private int stuff=0;
 
     private void searchContact(String keyword) {
 
-          contacts = db.search(keyword);
+        contacts = db.search(keyword);
 //        System.out.println(contacts.get(2));
 
         if (contacts != null) {
 
             mAdapter = new RcNotes_Adpater(contacts,this);
             RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
+            //      lstallnoteData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+            // lstcategoryData.setLayoutManager(new GridLayoutManager(this, 2));
+            //  lstcategoryData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL));
             lstallnoteData.setHasFixedSize(true);
             lstallnoteData.setLayoutManager(mLayoutManager);
             lstallnoteData.setItemAnimator(new DefaultItemAnimator());
@@ -234,8 +260,12 @@ private int stuff=0;
             mAdapter.notifyDataSetChanged();
         }else
         {
-
+            // contacts.clear();
+            //mAdapter.notifyDataSetChanged();
             Toast.makeText(getApplicationContext(),"No Notes Found",Toast.LENGTH_SHORT).show();
+            // mAdapter = new RcNotes_Adpater(notesdetailsList,this);
+//
+            // mAdapter.notifyDataSetChanged();
         }
     }
 
@@ -244,11 +274,14 @@ private int stuff=0;
     {
         mAdapter = new RcNotes_Adpater(notesdetailsList,this);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
+        //  lstallnoteData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        // lstcategoryData.setLayoutManager(new GridLayoutManager(this, 2));
+        //  lstcategoryData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL));
         lstallnoteData.setHasFixedSize(true);
         lstallnoteData.setLayoutManager(mLayoutManager);
         lstallnoteData.setItemAnimator(new DefaultItemAnimator());
         lstallnoteData.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
     }
-    }
+}
 

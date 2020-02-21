@@ -16,6 +16,8 @@ import com.example.NotesApp.Modal.Note;
 import com.example.NotesApp.Modal.NoteDetails;
 
 
+
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Database Version
@@ -86,6 +88,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // close the db connection
         cursor.close();
+
         return note;
     }
 
@@ -149,6 +152,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    //---------------------------------note-deatails-----------------------------------------
+
     public List<NoteDetails> getAllNotesDetails() {
         List<NoteDetails> notesdetails = new ArrayList<>();
 
@@ -168,7 +173,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 nd.setNotetitle(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTETITLE)));
                 nd.setNotedetails(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEDETAILS)));
                 nd.setNotedate(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEDATE)));
-               // nd.setNoteimage(cursor.getBlob(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEIMAGE)));
+                // nd.setNoteimage(cursor.getBlob(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEIMAGE)));
                 notesdetails.add(nd);
             } while (cursor.moveToNext());
         }
@@ -185,36 +190,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         LocalDateTime myDateObj = LocalDateTime.now();
         // System.out.println("Before formatting: " + myDateObj);
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd MMM,yyyy HH:mm:ss");
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String formattedDate = myDateObj.format(myFormatObj);
         ContentValues values = new ContentValues();
         // `id` and `timestamp` will be inserted automatically.
         // no need to add them
-       if(img_str==null )
-       {
-           Log.d("image",img_str);
-           values.put(NoteDetails.COLUMN_CATEGORY, cid);
-           values.put(NoteDetails.COLUMN_NOTETITLE,title);
-           values.put(NoteDetails.COLUMN_NOTEDETAILS,ndetails);
-          values.put(NoteDetails.COLUMN_NOTEIMAGE,img_str);
-           values.put(NoteDetails.COLUMN_NOTEDATE,formattedDate);
-           values.put(NoteDetails.COLUMN_LATITUDE,lati);
-           values.put(NoteDetails.COLUMN_LONGITUDE,longi);
-           values.put(NoteDetails.COLUMN_FULLADDRESS,fulladd);
-       }else
-       {
-           values.put(NoteDetails.COLUMN_CATEGORY, cid);
-           values.put(NoteDetails.COLUMN_NOTETITLE,title);
-           values.put(NoteDetails.COLUMN_NOTEDETAILS,ndetails);
-           values.put(NoteDetails.COLUMN_NOTEIMAGE,img_str);
-           values.put(NoteDetails.COLUMN_NOTEDATE,formattedDate);
-           values.put(NoteDetails.COLUMN_LATITUDE,lati);
-           values.put(NoteDetails.COLUMN_LONGITUDE,longi);
-           values.put(NoteDetails.COLUMN_FULLADDRESS,fulladd);
-     System.out.println(lati);
-           System.out.println(longi);
-           System.out.println(fulladd);
-       }
+        if(img_str==null )
+        {
+            Log.d("image",img_str);
+            values.put(NoteDetails.COLUMN_CATEGORY, cid);
+            values.put(NoteDetails.COLUMN_NOTETITLE,title);
+            values.put(NoteDetails.COLUMN_NOTEDETAILS,ndetails);
+            values.put(NoteDetails.COLUMN_NOTEIMAGE,img_str);
+            values.put(NoteDetails.COLUMN_NOTEDATE,formattedDate);
+            values.put(NoteDetails.COLUMN_LATITUDE,lati);
+            values.put(NoteDetails.COLUMN_LONGITUDE,longi);
+            values.put(NoteDetails.COLUMN_FULLADDRESS,fulladd);
+        }else
+        {
+            values.put(NoteDetails.COLUMN_CATEGORY, cid);
+            values.put(NoteDetails.COLUMN_NOTETITLE,title);
+            values.put(NoteDetails.COLUMN_NOTEDETAILS,ndetails);
+            values.put(NoteDetails.COLUMN_NOTEIMAGE,img_str);
+            values.put(NoteDetails.COLUMN_NOTEDATE,formattedDate);
+            values.put(NoteDetails.COLUMN_LATITUDE,lati);
+            values.put(NoteDetails.COLUMN_LONGITUDE,longi);
+            values.put(NoteDetails.COLUMN_FULLADDRESS,fulladd);
+            System.out.println(lati);
+            System.out.println(longi);
+            System.out.println(fulladd);
+        }
 
         // insert row
         long id = db.insert(NoteDetails.TABLE_NAME, null, values);
@@ -244,7 +249,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 nd.setNotetitle(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTETITLE)));
                 nd.setNotedetails(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEDETAILS)));
                 nd.setNotedate(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEDATE)));
-                 nd.setNoteimage(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEIMAGE)));
+                nd.setNoteimage(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEIMAGE)));
                 nd.setFulldaaress(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_FULLADDRESS)));
                 nd.setLatitude(cursor.getDouble(cursor.getColumnIndex(NoteDetails.COLUMN_LATITUDE)));
                 nd.setLongitude(cursor.getDouble(cursor.getColumnIndex(NoteDetails.COLUMN_LONGITUDE)));
@@ -277,12 +282,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEDETAILS)),
                 cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEDATE)),
                 cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEIMAGE)),
-
                 cursor.getDouble(cursor.getColumnIndex(NoteDetails.COLUMN_LATITUDE)),
                 cursor.getDouble(cursor.getColumnIndex(NoteDetails.COLUMN_LONGITUDE)),
-                cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_FULLADDRESS)),
-                cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_AUDIO)
-        ));
+                cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_FULLADDRESS))
+        );
         // close the db connection
         cursor.close();
         Log.d("fcat",note.getCategory());
@@ -298,7 +301,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public int updateNotedetails(NoteDetails note) {
         SQLiteDatabase db = this.getWritableDatabase();
         LocalDateTime myDateObj = LocalDateTime.now();
-       // System.out.println("Before formatting: " + myDateObj);
+        // System.out.println("Before formatting: " + myDateObj);
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
         String formattedDate = myDateObj.format(myFormatObj);
@@ -306,7 +309,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(NoteDetails.COLUMN_NOTETITLE, note.getNotetitle());
         values.put(NoteDetails.COLUMN_NOTEDETAILS, note.getNotedetails());
         values.put(NoteDetails.COLUMN_NOTEIMAGE, note.getNoteimage());
-        values.put(NoteDetails.COLUMN_AUDIO, note.getNoteaudio());
         values.put(NoteDetails.COLUMN_NOTEDATE,formattedDate);
         values.put(NoteDetails.COLUMN_LATITUDE,note.getLatitude());
         values.put(NoteDetails.COLUMN_LONGITUDE,note.getLongitude());
@@ -324,7 +326,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             SQLiteDatabase sqLiteDatabase = getReadableDatabase();
             Cursor cursor = sqLiteDatabase.rawQuery("select * from " + NoteDetails.TABLE_NAME + " where " + NoteDetails.COLUMN_NOTETITLE + " like ?", new String[] { "%" + keyword + "%" });
 
-                contacts = new ArrayList<NoteDetails>();
+            contacts = new ArrayList<NoteDetails>();
             if (cursor.moveToFirst()) {
                 do {
                     NoteDetails nd = new NoteDetails();
@@ -333,9 +335,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     nd.setNotetitle(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTETITLE)));
                     nd.setNotedetails(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEDETAILS)));
                     nd.setNotedate(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEDATE)));
-                     nd.setNoteimage(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEIMAGE)));
-                    nd.setNoteaudio(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_AUDIO)));
-                             nd.setFulldaaress(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_FULLADDRESS)));
+                    nd.setNoteimage(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEIMAGE)));
+                    nd.setFulldaaress(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_FULLADDRESS)));
 
                     contacts.add(nd);
                 } while (cursor.moveToNext());
@@ -390,7 +391,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 nd.setNotedetails(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEDETAILS)));
                 nd.setNotedate(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEDATE)));
                 nd.setNoteimage(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEIMAGE)));
-                nd.setNoteaudio(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_AUDIO)));
                 nd.setFulldaaress(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_FULLADDRESS)));
                 notesdetails1.add(nd);
             } while (cursor.moveToNext());
@@ -422,7 +422,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 nd.setNotedetails(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEDETAILS)));
                 nd.setNotedate(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEDATE)));
                 nd.setNoteimage(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_NOTEIMAGE)));
-                nd.setNoteaudio(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_AUDIO)));
                 nd.setFulldaaress(cursor.getString(cursor.getColumnIndex(NoteDetails.COLUMN_FULLADDRESS)));
                 notesdetails1.add(nd);
             } while (cursor.moveToNext());
