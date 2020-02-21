@@ -96,16 +96,12 @@ private int stuff=0;
                 }
                 int getrec= n1.getId();
                 Log.d("colid",Integer.toString(getrec));
-//Create the bundle
                 Bundle bundle = new Bundle();
 
-//Add your data to bundle
                 bundle.putInt("colid", getrec);
 
-//Add the bundle to the intent
                 i.putExtras(bundle);
 
-//Fire that second activity
                 startActivity(i);
             }
 
@@ -132,7 +128,6 @@ private int stuff=0;
                 {
                     contacts.clear();
                     getdata();
-                   // Toast.makeText(getApplicationContext(),"Hello Javatpoint",Toast.LENGTH_SHORT).show();
                 }
                 else {
                     searchContact(newText);
@@ -160,17 +155,14 @@ private int stuff=0;
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-         
+
             case R.id.addnotes:
                 //Write your code
                 Intent i=new Intent(this, AddnotesActivity.class);
 
                 Bundle bundle = new Bundle();
 
-//Add your data to bundle
                 bundle.putInt("cid", stuff);
-
-//Add the bundle to the intent
                 i.putExtras(bundle);
                 startActivity(i);
                 return true;
@@ -185,9 +177,6 @@ private int stuff=0;
                 notesdetailsList=db.getsortbytitle(stuff,"DESC");
                 mAdapter = new RcNotes_Adpater(notesdetailsList,this);
                 RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
-                //  lstallnoteData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-                // lstcategoryData.setLayoutManager(new GridLayoutManager(this, 2));
-                //  lstcategoryData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL));
                 lstallnoteData.setHasFixedSize(true);
                 lstallnoteData.setLayoutManager(mLayoutManager);
                 lstallnoteData.setItemAnimator(new DefaultItemAnimator());
@@ -199,9 +188,6 @@ private int stuff=0;
                 notesdetailsList=db.getsortbytitle(stuff,"ASC");
                 mAdapter = new RcNotes_Adpater(notesdetailsList,this);
                 RecyclerView.LayoutManager mLayoutManager1 = new GridLayoutManager(this, 1);
-                //  lstallnoteData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-                // lstcategoryData.setLayoutManager(new GridLayoutManager(this, 2));
-                //  lstcategoryData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL));
                 lstallnoteData.setHasFixedSize(true);
                 lstallnoteData.setLayoutManager(mLayoutManager1);
                 lstallnoteData.setItemAnimator(new DefaultItemAnimator());
@@ -213,9 +199,6 @@ private int stuff=0;
                 notesdetailsList=db.getsortbytitle(stuff,"DESC");
                 mAdapter = new RcNotes_Adpater(notesdetailsList,this);
                 RecyclerView.LayoutManager mLayoutManager2 = new GridLayoutManager(this, 1);
-                //  lstallnoteData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-                // lstcategoryData.setLayoutManager(new GridLayoutManager(this, 2));
-                //  lstcategoryData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL));
                 lstallnoteData.setHasFixedSize(true);
                 lstallnoteData.setLayoutManager(mLayoutManager2);
                 lstallnoteData.setItemAnimator(new DefaultItemAnimator());
@@ -227,9 +210,6 @@ private int stuff=0;
                 notesdetailsList=db.getsortbytitle(stuff,"ASC");
                 mAdapter = new RcNotes_Adpater(notesdetailsList,this);
                 RecyclerView.LayoutManager mLayoutManager3 = new GridLayoutManager(this, 1);
-                //  lstallnoteData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-                // lstcategoryData.setLayoutManager(new GridLayoutManager(this, 2));
-                //  lstcategoryData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL));
                 lstallnoteData.setHasFixedSize(true);
                 lstallnoteData.setLayoutManager(mLayoutManager3);
                 lstallnoteData.setItemAnimator(new DefaultItemAnimator());
@@ -250,9 +230,6 @@ private int stuff=0;
 
             mAdapter = new RcNotes_Adpater(contacts,this);
             RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
-      //      lstallnoteData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-            // lstcategoryData.setLayoutManager(new GridLayoutManager(this, 2));
-            //  lstcategoryData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL));
             lstallnoteData.setHasFixedSize(true);
             lstallnoteData.setLayoutManager(mLayoutManager);
             lstallnoteData.setItemAnimator(new DefaultItemAnimator());
@@ -260,12 +237,8 @@ private int stuff=0;
             mAdapter.notifyDataSetChanged();
         }else
         {
-           // contacts.clear();
-            //mAdapter.notifyDataSetChanged();
+
             Toast.makeText(getApplicationContext(),"No Notes Found",Toast.LENGTH_SHORT).show();
-            // mAdapter = new RcNotes_Adpater(notesdetailsList,this);
-//
-           // mAdapter.notifyDataSetChanged();
         }
     }
 
@@ -274,9 +247,6 @@ private int stuff=0;
     {
         mAdapter = new RcNotes_Adpater(notesdetailsList,this);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
-      //  lstallnoteData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-        // lstcategoryData.setLayoutManager(new GridLayoutManager(this, 2));
-        //  lstcategoryData.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL));
         lstallnoteData.setHasFixedSize(true);
         lstallnoteData.setLayoutManager(mLayoutManager);
         lstallnoteData.setItemAnimator(new DefaultItemAnimator());
