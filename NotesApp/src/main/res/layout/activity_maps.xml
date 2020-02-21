@@ -1,9 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.NotesApp.Activities.MapsActivity" />
+    android:orientation="vertical"
+    android:background="#25FFFFFF"
+    tools:context="com.example.NotesApp.Activities.MapsActivity">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFC107"
+
+        android:layout_gravity="right"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="22dp"
+            android:background="#FFC107"
+            android:textColor="#fff"
+            android:text="Select Map Types: "
+            android:textSize="15sp" />.
+    <Button
+        android:id="@+id/satellite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFC107"
+        android:text="Satellite"
+        />
+        <Button
+            android:id="@+id/terrain"
+            android:layout_width="wrap_content"
+            android:background="#FFC107"
+
+            android:layout_height="wrap_content"
+
+            android:text="terrain"/>
+        <Button
+            android:id="@+id/hybrid"
+            android:text="Hybrid"
+            android:background="#FFC107"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

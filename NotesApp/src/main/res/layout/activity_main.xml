@@ -10,7 +10,6 @@
     tools:context=".Activities.MainActivity">
 
 
-
     <SearchView
         android:id="@+id/search_category"
         android:layout_width="match_parent"

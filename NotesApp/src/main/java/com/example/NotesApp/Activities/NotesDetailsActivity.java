@@ -144,8 +144,8 @@ private int stuff=0;
 
      public void data() {
         cname = new ArrayList<>();
-        cname.add(new NoteDetails(1,"1","1","1","1","1"));
-         cname.add(new NoteDetails(1,"1","1","1","1","1"));
+        cname.add(new NoteDetails(1,"1","1","1","1","1","1"));
+         cname.add(new NoteDetails(1,"1","1","1","1","1","1"));
 
     }
 

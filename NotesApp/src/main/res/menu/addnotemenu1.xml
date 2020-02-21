@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/addnotes1"
-        android:icon="@drawable/ic_action_addnotes"
-        android:title="@string/addnotes"
+        android:title="SAve"
         app:showAsAction="always"
         />
 </menu>

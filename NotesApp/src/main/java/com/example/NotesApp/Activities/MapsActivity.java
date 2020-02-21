@@ -2,6 +2,8 @@ package com.example.NotesApp.Activities;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.NotesApp.Database.DatabaseHelper;
 import com.example.NotesApp.Modal.NoteDetails;
@@ -21,6 +23,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 private double lati,longi;
 private String fulladd;
 private int stuff=0;
+Button terrain,satellite,hybrid;
     ArrayList<NoteDetails> not= new ArrayList<NoteDetails>();
 private DatabaseHelper db;
     @Override
@@ -28,7 +31,12 @@ private DatabaseHelper db;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-     
+        terrain=findViewById(R.id.terrain);
+        hybrid=findViewById(R.id.hybrid);
+        satellite=findViewById(R.id.satellite);
+
+
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -67,12 +75,46 @@ private DatabaseHelper db;
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().setZoomGesturesEnabled(true);
         mMap.getUiSettings().setCompassEnabled(true);
+
+        terrain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+                mMap.getUiSettings().setZoomControlsEnabled(true);
+                mMap.getUiSettings().setZoomGesturesEnabled(true);
+                mMap.getUiSettings().setCompassEnabled(true);
+
+            }
+
+        });
+
+        hybrid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                mMap.getUiSettings().setZoomControlsEnabled(true);
+                mMap.getUiSettings().setZoomGesturesEnabled(true);
+                mMap.getUiSettings().setCompassEnabled(true);
+
+            }
+        });
+
+        satellite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                mMap.getUiSettings().setZoomControlsEnabled(true);
+                mMap.getUiSettings().setZoomGesturesEnabled(true);
+                mMap.getUiSettings().setCompassEnabled(true);
+
+            }
+        });
 if(stuff==0) {
     // Add a marker in Sydney and move the camera
-    LatLng sydney = new LatLng(lati, longi);
-    mMap.addMarker(new MarkerOptions().position(sydney).title(fulladd));
-    mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney, 14));
+    LatLng latLng = new LatLng(lati, longi);
+    mMap.addMarker(new MarkerOptions().position(latLng).title(fulladd));
+    mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 14));
 
 }else {
     for(NoteDetails n:not)
