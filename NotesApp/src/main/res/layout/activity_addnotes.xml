@@ -4,67 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFC107"
     android:orientation="vertical"
     tools:context="com.example.NotesApp.Activities.AddnotesActivity">
 
-    <EditText
-        android:id="@+id/txttitle"
-        android:layout_width="355dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="Enter Note Title"
-        android:inputType="textPersonName"
-        android:background="@drawable/myborder"
-
-        />
-
-    <EditText
-        android:id="@+id/txtnodedetails"
-        android:layout_width="354dp"
-        android:layout_height="234dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Enter Note Details"
-        android:inputType="textMultiLine"
-        android:background="@drawable/myborder"
-       />
-
-    <Button
-        android:id="@+id/add_audio"
-        android:layout_width="356dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Audio" />
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:textAlignment="center"
+
+        >
+
+        <EditText
+            android:id="@+id/txttitle"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:background="@drawable/myborder"
+            android:ems="10"
+            android:hint="Enter Note Title"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp" />
+
+        <EditText
+            android:id="@+id/txtnodedetails"
+            android:layout_width="match_parent"
+            android:layout_height="234dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/myborder"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Enter Note Details"
+            android:inputType="textMultiLine"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp" />
+
+        <ImageView
+            android:id="@+id/addimage_view"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="50dp"
+            android:layout_width="295dp"
+            android:layout_height="150dp"
+            android:adjustViewBounds="true"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/add_audio"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:background="#FF5722"
+            android:text="Add Audio" />
 
 
-    <Button
-        android:id="@+id/addimage"
-        android:layout_width="356dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="8dp"
-        android:text="Add Image"
-         />
+        <Button
+            android:id="@+id/addimage"
+            android:layout_width="300dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="50dp"
+            android:background="#FF9800"
+            android:text="Add Image" />
 
-    <ImageView
-        android:id="@+id/addimage_view"
 
-        android:layout_width="295dp"
-        android:layout_height="182dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:adjustViewBounds="true"
 
-        android:scaleType="fitXY"
-
-        tools:srcCompat="@tools:sample/avatars" />
-
+    </LinearLayout>
 </LinearLayout>

@@ -4,42 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFC107"
     android:orientation="vertical"
     tools:context="com.example.NotesApp.Activities.AudioActivity">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="@string/record_audio"
         android:textSize="30sp"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
+        android:layout_marginTop="30dp"/>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:layout_marginTop="20dp">
     <Button
         android:id="@+id/btn_record"
-        android:layout_marginHorizontal="40dp"
-        android:layout_width="match_parent"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:text="@string/record"/>
+        android:layout_marginHorizontal="40dp"
+        android:background="@drawable/ic_action_micon"
+        />
 
     <Button
         android:id="@+id/btn_stop_record"
-        android:layout_marginHorizontal="40dp"
-        android:layout_width="match_parent"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:text="@string/stop_recording"/>
+        android:layout_marginHorizontal="40dp"
+        android:background="@drawable/ic_action_micoff" />
 
     <Button
         android:id="@+id/btn_play"
-        android:layout_width="match_parent"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
-        android:text="@string/play"/>
+        android:background="@drawable/ic_action_play" />
 
     <Button
         android:id="@+id/btn_stop"
-        android:layout_width="match_parent"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
-        android:text="@string/stop"/>
-
+        android:background="@drawable/ic_action_stop"
+       />
+</LinearLayout>
 </LinearLayout>

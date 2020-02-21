@@ -14,7 +14,7 @@
     <string name="title_activity_maps">Map</string>
 
 
-    <string name="record_audio">Record Audio</string>
+    <string name="record_audio">Speak Up</string>
     <string name="record">record</string>
     <string name="play">play</string>
     <string name="stop">stop</string>
